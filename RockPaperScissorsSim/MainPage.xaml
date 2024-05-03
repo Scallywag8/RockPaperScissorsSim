@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RockPaperScissorsSim.MainPage">
+
+
+    <Grid RowDefinitions="*, 150"
+          ColumnDefinitions="*, *, *"
+          MinimumWidthRequest="300"
+          MaximumWidthRequest="400">
+        
+        <VerticalStackLayout Grid.Row="0" Grid.Column="0" Spacing="30">
+            <Button Text="Rock"
+                    WidthRequest="90"    HeightRequest="90"
+ 
+                    BackgroundColor="Gray"  TextColor="Black"
+                    Clicked="RockBtn"/>
+
+            <Button Text="Paper"
+                    WidthRequest="90"    HeightRequest="90"
+                    BackgroundColor="White" TextColor="Black"
+                    Clicked="PapBtn"/>
+
+            <Button Text="Scissors"
+                    WidthRequest="90"     HeightRequest="90"
+                    BackgroundColor="Red"   TextColor="White"
+                    Clicked="ScisBtn"/>
+            
+        </VerticalStackLayout>
+
+        <Label Grid.Row="0" Grid.Column="1"
+               Text="Select an Acton"
+               x:Name="result"
+               VerticalOptions="Center" HeightRequest="100"
+               HorizontalOptions="Center"
+            />
+
+        <Button Grid.Row="0" Grid.Column="2"
+               Text="..."
+               WidthRequest="90"     HeightRequest="90"
+               BackgroundColor="grey"
+               x:Name="AI"
+            />
+
+
+        <HorizontalStackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Padding="5">
+            <Label>
+                <FormattedString>
+                    <Span Text="Name: "/>
+                    <Span Text="{Binding Name}"/>
+                </FormattedString>
+            </Label>
+            <Label>
+                <FormattedString>
+                    <Span Text="Games: "/>
+                    <Span Text="{Binding Games}"/>
+                </FormattedString>
+            </Label>
+            <Label>
+                <FormattedString>
+                    <Span Text="Wins: "/>
+                    <Span Text="{Binding Wins}"/>
+                </FormattedString>
+            </Label>
+            <Label>
+                <FormattedString>
+                    <Span Text="Losses: "/>
+                    <Span Text="{Binding Losses}"/>
+                </FormattedString>
+            </Label>
+            <Label>
+                <FormattedString>
+                    <Span Text="Rock: "/>
+                    <Span Text="{Binding PlayedR}"/>
+                </FormattedString>
+            </Label>
+            <Label>
+                <FormattedString>
+                    <Span Text="Paper: "/>
+                    <Span Text="{Binding PlayedP}"/>
+                </FormattedString>
+            </Label>
+            <Label>
+                <FormattedString>
+                    <Span Text="Scissors: "/>
+                    <Span Text="{Binding PlayedS}"/>
+                </FormattedString>
+            </Label> 
+        </HorizontalStackLayout>
+
+    </Grid>
+
+</ContentPage>
